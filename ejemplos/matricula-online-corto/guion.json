@@ -4,6 +4,40 @@
   "rate": "+8%",
   "pitch": "+0Hz",
   "pausa_final_seg": 0.3,
+  "rag": {
+    "modulo": "Matrícula Online",
+    "publico": "Apoderados",
+    "objetivo": "Completar la matrícula online de los hijos para el próximo año, desde el ingreso hasta el pago.",
+    "preguntas": [
+      "¿Cómo matriculo a mi hijo en Alexia?",
+      "¿Cuáles son las etapas de la matrícula online?",
+      "¿Qué es PAC y PAT y cómo me suscribo?",
+      "¿Qué cargos son obligatorios y cuáles opcionales?",
+      "¿Cómo firmo los documentos de matrícula?",
+      "¿Cuándo y cómo se paga la matrícula?"
+    ],
+    "palabras_clave": [
+      "matrícula online",
+      "MOL",
+      "renovación",
+      "PAC",
+      "PAT",
+      "pago automático",
+      "cargos",
+      "firma digital",
+      "pago en línea",
+      "validar pago"
+    ],
+    "requisitos": [
+      "Usuario y contraseña de apoderado en Alexia",
+      "Que el colegio tenga abierto el proceso de matrícula",
+      "Ventanas emergentes habilitadas en el navegador (para el proveedor de pago)"
+    ],
+    "notas": [
+      "El pago se hace al final, después de firmar los documentos.",
+      "Los cargos obligatorios deben pagarse para quedar matriculado; los opcionales son voluntarios."
+    ]
+  },
   "pasos": [
     {
       "id": "01",
@@ -11,11 +45,37 @@
       "texto": "Así completas la matrícula online. Ingresa a Alexia con tu usuario y contraseña, y presiona Entrar.",
       "captura": "capturas/paso01.png",
       "acciones": [
-        {"tipo": "click", "x": 957, "y": 451, "cuando": "Ingresa a Alexia"},
-        {"tipo": "escribir", "x": 884, "y": 451, "texto": "12.345.678-9", "ancho": 195},
-        {"tipo": "click", "x": 957, "y": 529},
-        {"tipo": "escribir", "x": 884, "y": 529, "texto": "••••••••••", "ancho": 195},
-        {"tipo": "click", "x": 957, "y": 636, "cuando": "presiona Entrar"}
+        {
+          "tipo": "click",
+          "x": 957,
+          "y": 451,
+          "cuando": "Ingresa a Alexia"
+        },
+        {
+          "tipo": "escribir",
+          "x": 884,
+          "y": 451,
+          "texto": "12.345.678-9",
+          "ancho": 195
+        },
+        {
+          "tipo": "click",
+          "x": 957,
+          "y": 529
+        },
+        {
+          "tipo": "escribir",
+          "x": 884,
+          "y": 529,
+          "texto": "••••••••••",
+          "ancho": 195
+        },
+        {
+          "tipo": "click",
+          "x": 957,
+          "y": 636,
+          "cuando": "presiona Entrar"
+        }
       ]
     },
     {
@@ -24,8 +84,21 @@
       "texto": "Presiona Iniciar proceso en Matrícula Online.",
       "captura": "capturas/paso02.png",
       "acciones": [
-        {"tipo": "resaltar", "caja": [511, 301, 1081, 530], "seg": 0.6},
-        {"tipo": "click", "x": 615, "y": 488}
+        {
+          "tipo": "resaltar",
+          "caja": [
+            511,
+            301,
+            1081,
+            530
+          ],
+          "seg": 0.6
+        },
+        {
+          "tipo": "click",
+          "x": 615,
+          "y": 488
+        }
       ]
     },
     {
@@ -34,8 +107,23 @@
       "texto": "Lee la información del colegio y presiona Ocultar.",
       "captura": "capturas/paso03.png",
       "acciones": [
-        {"tipo": "resaltar", "caja": [485, 290, 1435, 600], "seg": 0.8, "cuando": "información del colegio"},
-        {"tipo": "click", "x": 1393, "y": 252, "cuando": "presiona Ocultar"}
+        {
+          "tipo": "resaltar",
+          "caja": [
+            485,
+            290,
+            1435,
+            600
+          ],
+          "seg": 0.8,
+          "cuando": "información del colegio"
+        },
+        {
+          "tipo": "click",
+          "x": 1393,
+          "y": 252,
+          "cuando": "presiona Ocultar"
+        }
       ]
     },
     {
@@ -45,8 +133,24 @@
       "texto": "Paso uno: revisa tus datos, sobre todo el correo y el celular. Luego, Guardar y siguiente.",
       "captura": "capturas/mol_personales.png",
       "acciones": [
-        {"tipo": "resaltar", "caja": [775, 572, 1415, 640], "nota": "Contacto del colegio", "seg": 1.4, "cuando": "el correo"},
-        {"tipo": "click", "x": 781, "y": 921, "cuando": "Guardar"}
+        {
+          "tipo": "resaltar",
+          "caja": [
+            775,
+            572,
+            1415,
+            640
+          ],
+          "nota": "Contacto del colegio",
+          "seg": 1.4,
+          "cuando": "el correo"
+        },
+        {
+          "tipo": "click",
+          "x": 781,
+          "y": 921,
+          "cuando": "Guardar"
+        }
       ]
     },
     {
@@ -56,9 +160,29 @@
       "texto": "Paso dos: en la ficha de cada hijo completa salud y seguro, y confirma la renovación de la matrícula.",
       "captura": "capturas/mol_hijos.png",
       "acciones": [
-        {"tipo": "resaltar", "caja": [578, 520, 1396, 664], "nota": "Salud y seguro", "seg": 1.2, "cuando": "completa salud"},
-        {"tipo": "click", "x": 607, "y": 789, "cuando": "confirma la renovación"},
-        {"tipo": "click", "x": 781, "y": 941}
+        {
+          "tipo": "resaltar",
+          "caja": [
+            578,
+            520,
+            1396,
+            664
+          ],
+          "nota": "Salud y seguro",
+          "seg": 1.2,
+          "cuando": "completa salud"
+        },
+        {
+          "tipo": "click",
+          "x": 607,
+          "y": 789,
+          "cuando": "confirma la renovación"
+        },
+        {
+          "tipo": "click",
+          "x": 781,
+          "y": 941
+        }
       ]
     },
     {
@@ -68,9 +192,42 @@
       "texto": "Paso tres: elige la forma de pago. Contado, PAC con cuenta bancaria, o PAT con tarjeta de crédito.",
       "captura": "capturas/mol_formapago.png",
       "acciones": [
-        {"tipo": "resaltar", "caja": [568, 511, 936, 551], "nota": "Pago en línea", "seg": 0.7, "cuando": "Contado"},
-        {"tipo": "resaltar", "caja": [568, 551, 936, 591], "nota": "Cuenta bancaria", "seg": 0.9, "cuando": "PAC"},
-        {"tipo": "resaltar", "caja": [568, 592, 936, 631], "nota": "Tarjeta de crédito", "seg": 1.0, "cuando": "PAT"}
+        {
+          "tipo": "resaltar",
+          "caja": [
+            568,
+            511,
+            936,
+            551
+          ],
+          "nota": "Pago en línea",
+          "seg": 0.7,
+          "cuando": "Contado"
+        },
+        {
+          "tipo": "resaltar",
+          "caja": [
+            568,
+            551,
+            936,
+            591
+          ],
+          "nota": "Cuenta bancaria",
+          "seg": 0.9,
+          "cuando": "PAC"
+        },
+        {
+          "tipo": "resaltar",
+          "caja": [
+            568,
+            592,
+            936,
+            631
+          ],
+          "nota": "Tarjeta de crédito",
+          "seg": 1.0,
+          "cuando": "PAT"
+        }
       ]
     },
     {
@@ -80,8 +237,23 @@
       "texto": "Con PAC o PAT, presiona Registro pago automático e ingresa tus datos en el proveedor. Al terminar, vuelves a Alexia automáticamente.",
       "captura": "capturas/mol_pat_boton.png",
       "acciones": [
-        {"tipo": "click", "x": 1204, "y": 651, "cuando": "presiona Registro"},
-        {"tipo": "resaltar", "caja": [996, 632, 1412, 671], "nota": "Habilita las ventanas emergentes", "seg": 1.8}
+        {
+          "tipo": "click",
+          "x": 1204,
+          "y": 651,
+          "cuando": "presiona Registro"
+        },
+        {
+          "tipo": "resaltar",
+          "caja": [
+            996,
+            632,
+            1412,
+            671
+          ],
+          "nota": "Habilita las ventanas emergentes",
+          "seg": 1.8
+        }
       ]
     },
     {
@@ -91,8 +263,22 @@
       "texto": "Verás Suscripción completada. Guardar y siguiente.",
       "captura": "capturas/mol_pat_ok.png",
       "acciones": [
-        {"tipo": "resaltar", "caja": [563, 623, 1412, 697], "seg": 1.0},
-        {"tipo": "click", "x": 781, "y": 768, "cuando": "Guardar"}
+        {
+          "tipo": "resaltar",
+          "caja": [
+            563,
+            623,
+            1412,
+            697
+          ],
+          "seg": 1.0
+        },
+        {
+          "tipo": "click",
+          "x": 781,
+          "y": 768,
+          "cuando": "Guardar"
+        }
       ]
     },
     {
@@ -102,9 +288,36 @@
       "texto": "Paso cuatro: se generan tus cargos. Los obligatorios, como la matrícula, debes pagarlos para quedar matriculado. Los opcionales, como el seguro, tú decides si los incluyes.",
       "captura": "capturas/mol_cargos.png",
       "acciones": [
-        {"tipo": "resaltar", "caja": [580, 588, 1370, 614], "nota": "Obligatorio", "seg": 2.6, "cuando": "Los obligatorios"},
-        {"tipo": "resaltar", "caja": [576, 619, 1370, 645], "nota": "Opcional", "seg": 1.6, "cuando": "Los opcionales"},
-        {"tipo": "click", "x": 588, "y": 632, "cuando": "tú decides"}
+        {
+          "tipo": "resaltar",
+          "caja": [
+            580,
+            588,
+            1370,
+            614
+          ],
+          "nota": "Obligatorio",
+          "seg": 2.6,
+          "cuando": "Los obligatorios"
+        },
+        {
+          "tipo": "resaltar",
+          "caja": [
+            576,
+            619,
+            1370,
+            645
+          ],
+          "nota": "Opcional",
+          "seg": 1.6,
+          "cuando": "Los opcionales"
+        },
+        {
+          "tipo": "click",
+          "x": 588,
+          "y": 632,
+          "cuando": "tú decides"
+        }
       ]
     },
     {
@@ -114,8 +327,22 @@
       "texto": "Aquí no pagas: el pago se hace al final. Guardar y siguiente.",
       "captura": "capturas/mol_cargos2.png",
       "acciones": [
-        {"tipo": "resaltar", "caja": [930, 643, 1398, 703], "seg": 1.0},
-        {"tipo": "click", "x": 781, "y": 819, "cuando": "Guardar"}
+        {
+          "tipo": "resaltar",
+          "caja": [
+            930,
+            643,
+            1398,
+            703
+          ],
+          "seg": 1.0
+        },
+        {
+          "tipo": "click",
+          "x": 781,
+          "y": 819,
+          "cuando": "Guardar"
+        }
       ]
     },
     {
@@ -125,7 +352,17 @@
       "texto": "Paso cinco: espera mientras se generan tus documentos.",
       "captura": "capturas/mol_firma_generando.png",
       "acciones": [
-        {"tipo": "resaltar", "caja": [545, 600, 1430, 975], "seg": 1.2, "cuando": "espera"}
+        {
+          "tipo": "resaltar",
+          "caja": [
+            545,
+            600,
+            1430,
+            975
+          ],
+          "seg": 1.2,
+          "cuando": "espera"
+        }
       ]
     },
     {
@@ -135,7 +372,11 @@
       "texto": "Marca la casilla de conformidad.",
       "captura": "capturas/mol_firma_conformidad.png",
       "acciones": [
-        {"tipo": "click", "x": 577, "y": 855}
+        {
+          "tipo": "click",
+          "x": 577,
+          "y": 855
+        }
       ]
     },
     {
@@ -145,8 +386,24 @@
       "texto": "Revisa el contrato con Borrador y presiona Firmar.",
       "captura": "capturas/mol_firma_docs.png",
       "acciones": [
-        {"tipo": "resaltar", "caja": [1163, 880, 1278, 914], "nota": "Revisar", "seg": 0.8, "cuando": "con Borrador"},
-        {"tipo": "click", "x": 1349, "y": 897, "cuando": "presiona Firmar"}
+        {
+          "tipo": "resaltar",
+          "caja": [
+            1163,
+            880,
+            1278,
+            914
+          ],
+          "nota": "Revisar",
+          "seg": 0.8,
+          "cuando": "con Borrador"
+        },
+        {
+          "tipo": "click",
+          "x": 1349,
+          "y": 897,
+          "cuando": "presiona Firmar"
+        }
       ]
     },
     {
@@ -156,8 +413,23 @@
       "texto": "Con los documentos firmados, solo falta pagar. Presiona Pago en línea.",
       "captura": "capturas/mol_pago_final.png",
       "acciones": [
-        {"tipo": "resaltar", "caja": [619, 128, 1301, 217], "seg": 1.2, "cuando": "documentos firmados"},
-        {"tipo": "click", "x": 960, "y": 439, "cuando": "Presiona Pago"}
+        {
+          "tipo": "resaltar",
+          "caja": [
+            619,
+            128,
+            1301,
+            217
+          ],
+          "seg": 1.2,
+          "cuando": "documentos firmados"
+        },
+        {
+          "tipo": "click",
+          "x": 960,
+          "y": 439,
+          "cuando": "Presiona Pago"
+        }
       ]
     },
     {
@@ -167,9 +439,30 @@
       "texto": "En el proveedor, los cargos obligatorios ya vienen marcados. Si quieres, agrega cuotas opcionales y presiona Pagar.",
       "captura": "capturas/mol_proveedor.png",
       "acciones": [
-        {"tipo": "resaltar", "caja": [355, 211, 1207, 317], "nota": "Obligatorios", "seg": 1.6, "cuando": "los cargos obligatorios"},
-        {"tipo": "click", "x": 381, "y": 344, "cuando": "agrega cuotas"},
-        {"tipo": "click", "x": 1400, "y": 390, "cuando": "presiona Pagar"}
+        {
+          "tipo": "resaltar",
+          "caja": [
+            355,
+            211,
+            1207,
+            317
+          ],
+          "nota": "Obligatorios",
+          "seg": 1.6,
+          "cuando": "los cargos obligatorios"
+        },
+        {
+          "tipo": "click",
+          "x": 381,
+          "y": 344,
+          "cuando": "agrega cuotas"
+        },
+        {
+          "tipo": "click",
+          "x": 1400,
+          "y": 390,
+          "cuando": "presiona Pagar"
+        }
       ]
     },
     {
@@ -179,7 +472,12 @@
       "texto": "Vuelve a Alexia y presiona Validar pago. ¡Listo, matrícula completa!",
       "captura": "capturas/mol_pago_final.png",
       "acciones": [
-        {"tipo": "click", "x": 960, "y": 597, "cuando": "presiona Validar"}
+        {
+          "tipo": "click",
+          "x": 960,
+          "y": 597,
+          "cuando": "presiona Validar"
+        }
       ]
     }
   ]

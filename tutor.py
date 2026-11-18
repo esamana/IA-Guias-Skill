@@ -10,6 +10,7 @@ Cada tutorial es un proyecto en proyectos/<nombre>/ con su guion.json. Uso:
     python tutor.py -p matricula-online ensamblar [--subs quemados|archivo|no]
     python tutor.py -p matricula-online todo [--subs ...]      # audio + capturas + ensamblar
     python tutor.py -p matricula-online dummy [--forzar]       # clips de prueba sin grabar
+    python tutor.py -p matricula-online exportar               # guía en Markdown para el RAG del chatbot
 """
 
 from __future__ import annotations
@@ -701,6 +702,8 @@ def crear_parser() -> argparse.ArgumentParser:
         p = sub.add_parser(nombre, help=ayuda)
         p.add_argument("--subs", choices=["quemados", "archivo", "no"], default="quemados")
 
+    sub.add_parser("exportar", help="exporta el guion como guía Markdown para el RAG (output/rag/)")
+
     dummy = sub.add_parser("dummy", help="genera clips de prueba en clips/")
     dummy.add_argument("--forzar", action="store_true", help="pisa clips existentes")
     return parser
@@ -718,6 +721,16 @@ def main(argv: list[str] | None = None) -> int:
             return 0
         proyecto = resolver_proyecto(args.proyecto)
         guion = cargar_guion(proyecto)
+        if args.comando == "exportar":
+            from exportar import exportar
+
+            duracion_video = None
+            if guion.salida.exists():
+                asegurar_ffmpeg()
+                duracion_video = duracion(guion.salida)
+            destino = exportar(proyecto.guion, proyecto.output / "rag", guion.salida, duracion_video)
+            log.info("Guía para el RAG: %s", destino)
+            return 0
         if args.comando == "audio":
             asyncio.run(generar_audios(proyecto, guion.filtrar(args.paso), args.forzar))
             return 0

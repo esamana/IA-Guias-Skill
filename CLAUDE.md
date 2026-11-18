@@ -17,6 +17,7 @@ La usan personas de Soporte/Experiencia que no programan: hablar en español sim
 - `tutor.py`: CLI del pipeline (`nuevo`, `audio`, `duraciones`, `capturas`, `grilla`, `ensamblar`, `todo`, `voces`).
 - `animar.py`: cursor, halo, onda de clic, tipeo, resaltados y rótulos.
 - `lamina.py`: láminas (portada, cierre o pantallas explicativas).
+- `exportar.py`: `tutor.py exportar` genera la guía Markdown del tutorial para el RAG del chatbot de Alexia.
 - `explorar.py`: navega Alexia con Playwright y saca capturas 1920x1080 con datos ficticios.
 - `docs/`: formato del guion, guía de estilo de narración, problemas conocidos.
 - `ejemplos/matricula-online-corto/guion.json`: guion de referencia (Matrícula Online, 16 pasos, 1:47).

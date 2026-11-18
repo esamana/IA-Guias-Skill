@@ -46,6 +46,25 @@ Todas aceptan `"cuando": "palabras de la narración"`: la acción espera a que l
 
 `"lamina": {...}` en un paso dibuja una pantalla con `lamina.py` (portada, cierre o resumen): `antetitulo`, `titulo`, `subtitulo`, `tarjetas` (`id`, `etiqueta`, `titulo`, `texto`, `color`) y `pie`. Los `id` sirven como `zona` para `resaltar`. Preferir siempre capturas reales de Alexia.
 
+## Exportar para el RAG del chatbot
+
+`python tutor.py -p X exportar` genera `output/rag/<titulo>.md`: frontmatter YAML con metadatos (módulo, público, palabras clave, video), las preguntas que responde y un encabezado `### Paso N` por paso con la narración, para que el RAG lo corte por pasos. Se alimenta de este bloque opcional del guion:
+
+```json
+"rag": {
+  "modulo": "Comunicados",
+  "publico": "Docentes y administrativos",
+  "objetivo": "Enviar un comunicado a las familias de un curso.",
+  "preguntas": ["¿Cómo envío un comunicado a un curso?", "¿Puedo adjuntar archivos?"],
+  "palabras_clave": ["comunicado", "circular", "mensaje a apoderados"],
+  "requisitos": ["Perfil con permiso para enviar comunicados"],
+  "notas": ["El envío no se puede deshacer."],
+  "video_url": "https://..."
+}
+```
+
+Por paso, `texto_rag` reemplaza la narración en el documento cuando lo hablado no se entiende leído. El prefijo "Paso tres:" de la narración se quita solo, porque ya va en el encabezado.
+
 ## Estilo de narración
 
 - Tuteo chileno, tono profesional y cercano. Frases cortas.

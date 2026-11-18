@@ -76,6 +76,7 @@ Editá `proyectos/<p>/guion.json` siguiendo `docs/guion-y-acciones.md`:
 - Un paso por pantalla, con `rotulo` ("Paso 2 de 6 · Destinatarios"), `texto` de narración y `acciones`.
 - Coordenadas: usá el `centro` de los elementos del dump de esa pantalla. Después generá `python tutor.py -p <p> grilla --paso NN` y **mirá `output/grilla_pasoNN.png`** para confirmar que cada acción cae sobre su botón o campo.
 - Usá `resaltar` con `cuando` para sincronizar con la voz, y un `click` al botón con el que se avanza al final de cada paso.
+- Completá el bloque `rag` (para el chatbot de Alexia, ver `docs/guion-y-acciones.md`): `modulo`, `publico`, `objetivo`, 4 a 8 `preguntas` como las haría un usuario real ("¿Cómo envío un comunicado a un curso?"), `palabras_clave` (incluí sinónimos y siglas), `requisitos` y `notas` importantes. Si una narración no se entiende leída sin el video ("presiona aquí"), agregá en ese paso un `texto_rag` escrito.
 
 ## 6. Generar y revisar
 
@@ -87,6 +88,14 @@ Revisá que no haya errores (por ejemplo una frase de `cuando` que no está en l
 
 Para ajustar un paso sin rehacer todo: `audio --paso NN`, `capturas --paso NN` y luego `ensamblar`.
 
+Cuando el usuario apruebe el video, exportá la guía para el RAG del chatbot:
+
+```powershell
+python tutor.py -p <p> exportar
+```
+
+Deja `proyectos/<p>/output/rag/<titulo>.md`. Leelo y verificá que no tenga datos reales ni frases que solo se entienden mirando el video. Si el usuario te da la URL donde se publicó el video, ponela en `rag.video_url` y exportá de nuevo.
+
 ## 7. Cierre
 
-Resumí en pocas líneas qué pasos tiene el video, cuánto dura, dónde quedó y qué supuestos hiciste. Recordale que el video es para uso interno hasta revisar que no tenga datos reales, y que no se sube al repo.
+Resumí en pocas líneas qué pasos tiene el video, cuánto dura, dónde quedaron el MP4 y la guía `.md` para el RAG, y qué supuestos hiciste. La guía `.md` es la que se sube al RAG de Chile. Recordale que el video es para uso interno hasta revisar que no tenga datos reales, y que no se sube al repo.

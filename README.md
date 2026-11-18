@@ -22,7 +22,7 @@ Arma tutoriales en video de **cualquier módulo de Alexia**, con narración en v
 3. Claude va a pedir:
    - la URL de Alexia, el usuario y la contraseña de prueba (no se guardan en ningún archivo);
    - el módulo, la tarea que debe aprender quien mire el video, para quién es, los pasos a mostrar, qué botones no tocar y el formato (completo o corto, voz, subtítulos).
-4. Claude explora Alexia, arma el video y te pasa la ruta del MP4 en `proyectos/<nombre>/output/`. Pedile los cambios que quieras ("el paso 3 más corto", "resaltá el botón Guardar").
+4. Claude explora Alexia, arma el video y te pasa la ruta del MP4 en `proyectos/<nombre>/output/`, y la **guía escrita para el RAG del chatbot** en `proyectos/<nombre>/output/rag/` (Markdown, lista para subir). Pedile los cambios que quieras ("el paso 3 más corto", "resaltá el botón Guardar").
 
 ## Reglas
 
