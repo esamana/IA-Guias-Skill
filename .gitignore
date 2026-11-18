@@ -1,0 +1,18 @@
+# Personal / local: nunca al repo
+CLAUDE.local.md
+.claude/settings.local.json
+Vault/
+.obsidian/
+
+# Proyectos: tienen capturas de Alexia, datos y videos (solo uso local)
+proyectos/
+explorar/
+*.mp4
+*.mkv
+*.mp3
+ficticios.json
+.env*
+
+__pycache__/
+*.pyc
+instalar.log
